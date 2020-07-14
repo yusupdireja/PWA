@@ -4,7 +4,7 @@ class DB {
   static init() {
     const dbPromise = idb.open("football", 1, function (upgradeDb) {
       if (!upgradeDb.objectStoreNames.contains("schedule")) {
-        var peopleOS = upgradeDb.createObjectStore("schedule", {
+          upgradeDb.createObjectStore("schedule", {
           keyPath: "id"
         });
       }
@@ -22,12 +22,15 @@ class DB {
 
       })
       .then(() => {
-        console.log("Jadwal berhasil disimpan");
+        M.toast({html: 'Berhasil menyimpan jadwal pertandingan'}); 
+      })
+      .catch(()=>{
+        M.toast({html: `Data sudah tersimpan sebelumnya`}); 
       })
   }
 
   static hapus(id) {
-    this.dbPromise.then(() => {
+    this.dbPromise.then(db => {
       const tx = db.transaction("schedule", "readwrite");
       const sc = tx.objectStore("schedule");
       sc.delete(id);
@@ -37,15 +40,17 @@ class DB {
     })
   }
 
-  static show() {
+   static show() {
     return this.dbPromise.then(db => {
       const tx = db.transaction('schedule', 'readonly');
       const sc = tx.objectStore('schedule');
       return sc.getAll();
-    }).then(function (items) {
+    }).then(items=> {
       console.log('Berhasil mengambil semua data jadwal ');
       return items;
     });
   }
+
+  
 }
 export default DB;

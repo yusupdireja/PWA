@@ -244,6 +244,7 @@ margin-bottom: 20px;
 .team-img>img{
     width: 20px;
     height: 20px;
+    
 }
 
 .team{
@@ -251,9 +252,17 @@ margin-bottom: 20px;
     text-align: center;
 }
 
-/* .s-bookmark{
-    margin-bottom: 90px;
-} */
+.btn-hapus{
+    padding-top: 8px;
+    text-align: center;
+    background-color: #AA132F;
+    color: white;
+    border-radius: 10px;
+    height: 40px;
+}
+.bookmark-saved{
+    filter: invert(19%) sepia(94%) saturate(2258%) hue-rotate(347deg) brightness(88%) contrast(97%) !important;
+}
 
 @media only screen and (max-width: 800px) {
     .nav-img{

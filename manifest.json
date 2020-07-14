@@ -1,0 +1,25 @@
+{
+    "name": "Football Mania Apps",
+    "short_name": "Football Mania",
+    "theme_color": "#AA132F",
+    "description": "Aplikasi Seputar Sepak Bola",
+    "background_color": "#AA132F",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/index.html",
+    "icons": [
+      {
+        "src": "img/ic_logo_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "img/ic_logo_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "gcm_sender_id":"910845837317"
+    
+}
+
